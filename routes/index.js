@@ -24,7 +24,7 @@ require('./personal')
 require('./article')
 
 //用来加载tpl模板
-require('./tpl')
+//require('./tpl')
 
 //CMS系统
 require('./cms')

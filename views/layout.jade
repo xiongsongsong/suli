@@ -26,7 +26,9 @@ html
             window['assetsCDN']='#{assetsCDN}'
             window['imgCDN']='#{imgCDN}'
             if(!window.console)window.console={log:function(){}}
-        script(id="seajsnode",src="#{assetsCDN}/s/??sea.js,seajs-text.js,seajs-combo.js")
+        script(id="seajsnode",src="#{assetsCDN}/s/sea.js")
+        script(src="#{assetsCDN}/s/seajs-text.js")
+        script(src="#{assetsCDN}/s/seajs-combo.js")
         script.
             KISSY.config({
                 modules: {
@@ -45,9 +47,12 @@ html
                 vars: {
                     locale: 'zh-cn'
                 },
+                comboExcludes:/\.tpl/,
                 paths:{
                     s : "#{assetsCDN}/s",
-                    sea:"#{assetsCDN}/s/sea-modules"
+                    sea:"#{assetsCDN}/s/sea-modules",
+                    tplhost:"#{hostDOMAIN}/s",
+                    csshost:"#{assetsCDN}/s"
                 },
                 map:[
                     [/(.*\.(css|js))(?:.*)$/i, "$1?2013124.$2"]

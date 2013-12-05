@@ -10,7 +10,7 @@ define(function (require, exports, module) {
 
     KISSY.use("overlay,event,dom", function (S, O, Event, DOM) {
 
-        var tpl = require('./type.tpl')
+        var tpl = require('/s/global/publish-type/type.tpl')
 
         var dialog = new O.Dialog({
             elCls: 'publish-works',

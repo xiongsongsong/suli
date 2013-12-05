@@ -15,7 +15,7 @@ define(function (require, exports, module) {
     var type = $wrapper.attr('data-type')
     var $h2
     var $window = $(window)
-    var tpl = require('./comment-block.tpl')
+    var tpl = require('host/global/comment/comment-block.tpl')
     var cache = template.compile(tpl)
 
     $window.on('scroll', scrollCheck)
@@ -30,11 +30,10 @@ define(function (require, exports, module) {
     scrollCheck()
 
     function init() {
-        require.async('./comment.css', function () {
-            $h2 = $wrapper.find('h2')
-            initWaterfall()
-        })
-        $('#J-comment-wrapper').html(require('./comment-textarea.tpl'))
+        require('csshost/global/comment/??comment.css,test.css')
+        $h2 = $wrapper.find('h2')
+        initWaterfall()
+        $('#J-comment-wrapper').html(require('host/global/comment/comment-textarea.tpl'))
     }
 
     function initWaterfall() {
