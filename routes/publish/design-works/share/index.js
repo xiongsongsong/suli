@@ -10,7 +10,7 @@ var app = require('app')
 var helper = require('helper')
 
 //上传作品的界面
-app.get('/publish/design-works', function (req, res) {
+app.get('/design-works/publish', function (req, res) {
 
     var result = {err: []}
     if (require('helper').isLogin(req) === false) {
@@ -29,10 +29,8 @@ app.get('/publish/design-works', function (req, res) {
             res.render('invalid-group', result)
             return
         }
-        if (group.indexOf('上传共享作品') > -1) {
-            res.render('publish/design-works/publish', {type: 'share'})
-        } else if (group.indexOf('上传个人作品') > -1) {
-            res.render('publish/design-works/publish', {type: 'own'})
+        if (group.indexOf('上传共享作品') > -1 || group.indexOf('上传个人作品') > -1) {
+            res.render('design-works/publish/publish')
         } else {
             result.title = '您没有权限'
             result.err.push('您没有上传作品的权限')
